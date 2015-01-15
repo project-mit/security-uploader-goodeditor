@@ -64,7 +64,10 @@ EXE, DLL 등의 파일의 PE HEADER 구조를 직접 바이너리 분석을 통�
 ```
 
 ## 에디터 적용 방법!!
-1. git clone http://yobi.d2fest.kr/pro_hacker/Security_Uploader_GoodEditor
+1.
+`git clone https://github.com/ProJectMIT/Security_Uploader_GoodEditor`
+또는
+`git clone http://yobi.d2fest.kr/pro_hacker/Security_Uploader_GoodEditor`
 2. 환경설정은 필요 없으며 설치한 디렉토리를 기준으로 Security_Uploader_GoodEditor/goodEditor/goodEditor.js 파일을 정상적으로 `<head>` 태그에 추가하는 것으로
 연동은 완료됩니다.
 3. 2번 진행 후 아래 소스를 `<body>` 태그 맨 아래 복사하신후 알맞게 수정해 주시면 됩니다.
@@ -96,7 +99,10 @@ true : editor mode, false : html mode
 이 라이브러리를 조금 더 발전시킨다면 ...
 ```javascript
 /*
-웹상에서 백신 프로그램의 개발이 가능할 것이며, 추후 실제 백신 관련 기능을 내포한 라이브러리로 발전 시킬수 있다면 발전 시킬 생각입니다.
-또한 MIT 정책을 사용함으로써 현재 업로드 시스템을 누구나 라이선스 걱정없이 손쉽게 참조하고 교육용으로 사용하며 자신의 시스템에 적용할 수 있다는 것 입니다.
+웹상에서 백신 프로그램의 개발이 가능할 것이며, 추후 실제 백신 관련
+기능을 내포한 라이브러리로 발전 시킬수 있다면 발전 시킬 생각입니다.
+또한 MIT 정책을 사용함으로써 현재 업로드 시스템을 누구나 라이선스
+걱정없이 손쉽게 참조하고 교육용으로 사용하며 자신의 시스템에 적용
+할 수 있다는 것 입니다.
 */
 ```
