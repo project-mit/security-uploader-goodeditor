@@ -64,10 +64,7 @@ EXE, DLL 등의 파일의 PE HEADER 구조를 직접 바이너리 분석을 통�
 ```
 
 ## 에디터 적용 방법!!
-1.
-`git clone https://github.com/ProJectMIT/Security_Uploader_GoodEditor`
-또는
-`git clone http://yobi.d2fest.kr/pro_hacker/Security_Uploader_GoodEditor`
+1. `git clone https://github.com/ProJectMIT/Security_Uploader_GoodEditor` 또는 `git clone http://yobi.d2fest.kr/pro_hacker/Security_Uploader_GoodEditor`
 2. 환경설정은 필요 없으며 설치한 디렉토리를 기준으로 Security_Uploader_GoodEditor/goodEditor/goodEditor.js 파일을 정상적으로 `<head>` 태그에 추가하는 것으로
 연동은 완료됩니다.
 3. 2번 진행 후 아래 소스를 `<body>` 태그 맨 아래 복사하신후 알맞게 수정해 주시면 됩니다.
