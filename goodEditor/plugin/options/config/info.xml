@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+	<plugin useTap="true">
+		<title>기타 옵션</title>
+		<description>에디터의 기타 여러가지 기능들을 모아놓은 플러그인 입니다.</description>
+		<version>0.1.1</version>
+		<date>2010-07-22</date>
+	</plugin>
+	<author>
+		<name>goodEditor</name>
+		<email>quddnr145@naver.com</email>
+		<link>http://www.pj-room.com/</link>
+	</author>
+</info>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+	<plugin useTap="true">
+		<title>파일 첨부</title>
+		<description>이미지 및 동영상, 기타 여러가지 자료등을 첨부할 수 있는 플러그인 입니다.</description>
+		<version>1.1.1</version>
+		<date>2013-09-29</date>
+	</plugin>
+	<author>
+		<name>goodEditor</name>
+		<email>quddnr145@naver.com</email>
+		<link>http://www.pj-room.com/</link>
+	</author>
+</info>

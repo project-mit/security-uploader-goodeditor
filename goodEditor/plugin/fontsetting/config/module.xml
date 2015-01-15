@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<plugin callback="fontfamily" action="true">
+		<title>글꼴 선택</title>
+		<description>선택한 영역의 글꼴을 선택 합니다.</description>
+	</plugin>
+
+	<plugin callback="" action="false" />
+
+	<plugin callback="fontsize" action="true">
+		<title>글꼴 크기 선택</title>
+		<description>선택한 영역의 글꼴의 사이즈를 선택합니다.</description>
+	</plugin>
+
+	<plugin callback="" action="false" />
+
+	<plugin callback="bold" action="true">
+		<title>글꼴 진하게</title>
+		<description>선택한 영역의 글꼴을 진하게 합니다.</description>
+	</plugin>
+	<plugin callback="underline" action="true">
+		<title>글꼴 밑줄긋기</title>
+		<description>선택한 영역의 글꼴에 밑줄을 긋습니다.</description>
+	</plugin>
+	<plugin callback="Italic" action="true">
+		<title>글꼴 기울임</title>
+		<description>선택한 영역의 글꼴에 기울임을 적용시킵니다.</description>
+	</plugin>
+	<plugin callback="strike" action="true">
+		<title>글꼴 취소선</title>
+		<description>선택한 영역의 글꼴에 취소선을 적용시킵니다.</description>
+	</plugin>
+	<plugin callback="color" action="true">
+		<title>글꼴 색상 적용</title>
+		<description>선택한 영역의 글꼴에 색상을 적용시킵니다.</description>
+	</plugin>
+	<plugin callback="bgcolor" action="true">
+		<title>글꼴 배경색 적용</title>
+		<description>선택한 영역의 글꼴에 배경색을 적용시킵니다.</description>
+	</plugin>
+
+	<plugin callback="" action="false" />
+
+	<plugin callback="left" action="true">
+		<title>왼쪽 정렬</title>
+		<description>커서가 있는 줄의 문자를 왼쪽 정렬합니다.</description>
+	</plugin>
+	<plugin callback="center" action="true">
+		<title>중앙 정렬</title>
+		<description>커서가 있는 줄의 문자를 중앙 정렬합니다.</description>
+	</plugin>
+	<plugin callback="right" action="true">
+		<title>오른쪽 정렬</title>
+		<description>커서가 있는 줄의 문자를 오른쪽 정렬합니다.</description>
+	</plugin>
+	<plugin callback="both" action="true">
+		<title>양쪽 정렬</title>
+		<description>커서가 있는 줄의 문자를 양쪽 정렬합니다.</description>
+	</plugin>
+	<plugin callback="out" action="true">
+		<title>들여쓰기</title>
+		<description>커서가 있는 줄의 문자를 들여씁니다.</description>
+	</plugin>
+	<plugin callback="in" action="true">
+		<title>내어쓰기</title>
+		<description>커서가 있는 줄의 문자를 내어씁니다.</description>
+	</plugin>
+</module>

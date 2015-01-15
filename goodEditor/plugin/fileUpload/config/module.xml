@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<plugin callback="photo" action="true">
+		<title>사진 업로드</title>
+		<description>이미지 에디터를 이용하여 파일을 편집후 업로드 합니다.</description>
+	</plugin>
+	<plugin callback="file" action="true">
+		<title>파일 업로드</title>
+		<description>일반 파일을 업로드 합니다.</description>
+	</plugin>
+</module>

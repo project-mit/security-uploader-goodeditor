@@ -1,0 +1,9 @@
+﻿사용한 오픈소스 프로젝트
+
+- php-analyzes-execute-file-format - MIT
+
+직접 제작하여 사용중
+
+https://github.com/ProJectMIT/php-analyzes-execute-file-format
+소스 리펙토링 과정에서 github를 사용하여 진행한바 오해가 있을 소지가 있어
+직접 제작하였지만 사용한 오픈소스 목록에 등록

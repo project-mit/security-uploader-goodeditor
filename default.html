@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=euc-kr" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="robots" content="noindex, nofollow" />
+
+	<title>나만의 웹 에디터 - goodEditor</title>
+
+	<link rel="shortcut icon" href="../cafe/images/favicon.ico" />
+	<script type="text/javascript" src="./goodEditor/goodEditor.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+	function changeTF(v, f, o) {
+		var changeTFValue = eval("document.getElementById('" + f + "').b" + v + "TF.value");
+		if (changeTFValue == 1) {
+			eval("document.getElementById('" + f + "').b" + v + "TF.value = '0'");
+			o.style.color = '#777';
+			o.innerHTML += '안함';
+		} else {
+			eval("document.getElementById('" + f + "').b" + v + "TF.value = '1'");
+			var str = o.innerHTML;
+			o.style.color = '#31a407';
+			o.innerHTML = str.replace('안함', '');
+		}
+	}
+
+	// 체크 박스 관련 시작
+	// Mouse Over
+	function checkOver(obj, fobj, RootPath){
+		if (typeof(RootPath) == 'undefined') {
+			var RootPath = './';
+		}
+		if(eval('document.getElementById(\'' + fobj + '\').' + obj + '_hidden' + '.value') == '0'){
+			document.getElementById(obj).setAttribute('src', RootPath + '../cafe/images/checkbox/ch_over.gif');
+		}else{
+			document.getElementById(obj).setAttribute('src', RootPath + '../cafe/images/checkbox/ch_ov_click.gif');
+		}
+	}
+
+	// Mouse Out
+	function checkOut(obj, fobj, RootPath){
+		if (typeof(RootPath) == 'undefined') {
+			var RootPath = './';
+		}
+		if(eval('document.getElementById(\'' + fobj + '\').' + obj + '_hidden' + '.value') == '0'){
+			document.getElementById(obj).setAttribute('src', RootPath + '../cafe/images/checkbox/ch_none.gif');
+		}else{
+			document.getElementById(obj).setAttribute('src', RootPath + '../cafe/images/checkbox/ch_click.gif');
+		}
+	}
+
+	// Mouse Click
+	function checkClick(obj, fobj, RootPath){
+		if (typeof(RootPath) == 'undefined') {
+			var RootPath = './';
+		}
+		if(eval('document.getElementById(\'' + fobj + '\').' + obj + '_hidden' + '.value') == '0'){
+			eval('document.getElementById(\'' + fobj + '\').' + obj + '_hidden' + '.value = \'1\'');
+			document.getElementById(obj).setAttribute('src', RootPath + '../cafe/images/checkbox/ch_click.gif');
+		}else{
+			eval('document.getElementById(\'' + fobj + '\').' + obj + '_hidden' + '.value = \'0\'');
+			document.getElementById(obj).setAttribute('src', RootPath + '../cafe/images/checkbox/ch_none.gif');
+		}
+	}
+
+	// 동적 CSS 포함
+	include('../cafe/css/common_cafe.css');
+	include('../cafe/css/common_class.css');
+
+	// 동적 SelectBox을 생성하기 위한 값
+	var opt = new Array();
+	opt[0] = new Array();
+	opt[0][0] = '말머리01';
+	opt[0][1] = '말머리02';
+	opt[0][2] = '말머리03';
+
+	opt[1] = new Array();
+	opt[1][0] = '말머리11';
+	opt[1][1] = '말머리12';
+	opt[1][2] = '말머리13';
+
+	// 'cafeBoardMenuId' SelectBox에서 선택한 값을 저장하는 함수
+	var sv = {
+		cafeBoardMenuId : '',
+
+		// SelectBox값을 저장후 '말머리' SelectBox를 동적으로 변경
+		setValue : function(v, s) {
+			this.cafeBoardMenuId = v;
+			var SOption = '';
+			if (v) {
+				for (var i = 0 ; i < opt[v].length; i++) {
+					if (s == opt[v][i]) {
+						var o = ' selected="selected"';
+					} else {
+						var o = '';
+					}
+					SOption += '<option value="' + opt[v][i] + '"' + o + '>' + opt[v][i] + '</option>';
+				}
+			} else {
+				SOption = '';
+			}
+			document.getElementById('cafeWorldToolTip_Object').innerHTML =	
+			'<select name="cafeWordToolTip">' + 
+				'<option value="">--말머리선택--</option>' + 
+				SOption + 
+			'</select>';
+		},
+
+		// 저장된값을 리턴
+		getValue : function() {
+			return this.cafeBoardMenuId;
+		}
+	};
+	//]]>
+	</script>
+</head>
+<body>
+<?php
+if (isset($_POST['searchYN_hidden'])) {
+	echo '<xmp>';
+	print_r($_POST);
+	echo '</xmp>';
+} else {
+?>
+	<div id="wrapper">
+		<div id="cafe_page" style="overflow:hidden; float:left; width:100%; margin:0; padding:0;">
+			<div id="rgt" style="margin:0; padding:0;">
+				<div style="background:url('./goodEditor/images/title_bg.png') no-repeat; width:565px; height:32px;">
+					<img src="./goodEditor/images/btn/q_help_btn.png" alt="" style="float:left; cursor:pointer; margin-top:7px; margin-left:98px;" />
+
+					<!-- 경고문 -->
+					<div style="float:left; margin-bottom:10px; margin-left:120px; cursor:pointer;">
+						<img src="../cafe/images/error_icon.gif" alt="" style="float:left; margin-top:8px;" />
+						<span style="float:left; margin-top:7px; margin-left:5px; text-decoration:underline; color:#ff7200;">
+							명예를 훼손하는 게시물은 관련법률에 의해 제재를 받습니다.
+						</span>
+					</div>
+					<!-- // 경고문 -->
+				</div>
+
+				<form id="contentWrite_f" action="" method="post" style="clear:both;">
+					<fieldset style="border:0;">
+						<input type="hidden" name="searchYN_hidden" value="0" />
+
+						<div style="overflow:hidden; margin-top:10px; margin-left:20px;">
+							<!-- 카테고리 선택 부분 -->
+							<ul style="clear:both; list-style:none; height:30px;">
+								<li style="float:left; width:70px; font-weight:bold;">카테고리</li>
+								<li style="float:left;">
+									<select name="cafeBoardMenuId" style="float:left;" onchange="sv.setValue(this.value, '0');">
+										<option value="">--게시판선택--</option>
+										<option value="0">게시판0</option>
+										<option value="1">게시판1</option>
+									</select>
+									<div id="cafeWorldToolTip_Object" style="float:left; margin-left:5px;">
+										<select name="cafeWordToolTip" style="">
+											<option value="">--말머리선택--</option>
+										</select>
+									</div>
+								</li>
+							</ul>
+							<!-- //카테고리 선택 부분 -->
+
+							<!-- 공지사항 등록여부 선택 부분 -->
+							<ul style="clear:both; list-style:none; height:30px;">
+								<li style="float:left; width:70px; font-weight:bold;">공지사항</li>
+								<li style="float:left;">
+									<input type="radio" id="noticeType_none" name="noticeType" value="0" checked="checked" />
+									<label for="noticeType_none">일반 게시글</label>
+
+									<input type="radio" id="noticeType_true" name="noticeType" value="1" style="margin-left:10px;" />
+									<label for="noticeType_true">카페메인 공지</label>
+
+									<input type="radio" id="noticeType_false" name="noticeType" value="2" style="margin-left:10px;" />
+									<label for="noticeType_false">게시판 공지</label>
+								</li>
+							</ul>
+							<!-- //공지사항 등록여부 선택 부분 -->
+
+							<!-- 제목 입력 부분 -->
+							<ul style="clear:both; list-style:none; height:30px;">
+								<li style="float:left; width:70px; font-weight:bold;">제목</li>
+								<li style="float:left;">
+									<input type="text" name="bSubject" value="" class="input_skin1"
+									style="background:url('./goodEditor/images/bSubject_bg.gif') no-repeat left;"
+									onfocus="this.style.background='#fff'"
+									onblur="if(!this.value){ this.style.background='url(\'./goodEditor/images/bSubject_bg.gif\') no-repeat left'; }" />
+								</li>
+							</ul>
+							<!-- //제목 입력 부분 -->
+
+							<!-- 제목 입력 부분 -->
+							<ul style="clear:both; list-style:none; height:30px;">
+								<li style="float:left; width:70px; font-weight:bold;">HTML 모드</li>
+								<li style="float:left;">
+									<input type="checkbox" name="bHtmlMode" value="1" onclick="goodEditor.mode.change();" /> HTML
+								</li>
+							</ul>
+							<!-- //제목 입력 부분 -->
+						</div>
+
+						<!-- 에디터 레이아웃 영역 -->
+						<div style="clear:both; margin-left:10px; margin-bottom:10px;">
+							<div id="EditorArea">
+								<fieldset style="border:1px none transparent;">
+									<textarea id="editor" name="editor" style="width:550px; height:200px;">내용이 있을경우 이와 같이 내용이 설정되며<br />기본 textarea의 width, height 값이 모두 기본 가로, 세로 크기보다 클 경우 textarea의 width, height값을 에디터가 적용합니다.</textarea>
+								</fieldset>
+
+								<!-- 01. 태그달기 -->
+								<ul style="clear:both; list-style:none; height:30px;">
+									<li style="float:left; width:70px; font-weight:bold; padding-top:2px;">태그달기</li>
+									<li style="float:left;">
+										<input type="text" name="bTags" value="<?php echo $ReadBoardContents['bTags']; ?>" class="input_skin1"
+											style="float:left; font-size:11px; <?php echo (!isset($ReadBoardContents['bTags']))?"background:url('./goodEditor/images/bTag_bg.gif') no-repeat left;":null; ?> width:365px; padding-top:4px; padding-bottom:0px;"
+											onfocus="this.style.background='#fff'"
+											onblur="if(!this.value){ this.style.background='url(\'./goodEditor/images/bTag_bg.gif\') no-repeat left'; }" />
+
+										<img src="./goodEditor/images/showTag_btn.gif" alt="나의 태그보기" style="float:left; cursor:pointer; margin-left:5px;" />
+										<!-- [태그란?] 도움말 -->
+										<img src="./goodEditor/images/btn/q_help_btn.png" alt="" style="float:left; cursor:pointer; margin-top:2px; margin-left:5px;" />
+										<!-- //[태그란?] 도움말 -->
+									</li>
+								</ul>
+								<!-- //01. 태그달기 -->
+
+								<!-- 02. 공개설정 -->
+								<ul style="clear:both; list-style:none; height:30px;">
+									<li style="float:left; width:70px; font-weight:bold; padding-top:2px;">공개설정</li>
+									<li style="float:left;">
+										<input type="radio" id="openyn_y" name="openyn" value="1" checked="checked" />
+										<label for="openyn_y">전체공개</label>
+
+										<input type="radio" id="openyn_n" name="openyn" value="0" style="margin-left:10px;" />
+										<label for="openyn_n">멤버공개</label>
+									</li>
+								</ul>
+								<!-- //02. 공개설정 -->
+
+								<!-- 03. 검색설정 -->
+								<ul style="clear:both; list-style:none; height:30px;">
+									<li style="float:left; width:70px; font-weight:bold; padding-top:2px;">검색설정</li>
+									<li style="float:left;">
+										<img id="searchYN" src="../cafe/images/checkbox/ch_<?php echo ($ReadBoardContents['bSearchTF'] == 'T')?'click':'none'; ?>.gif" alt="" style="float:left;margin-bottom:-2px;"
+											onmouseover="checkOver('searchYN', 'contentWrite_f');"
+											onmouseout="checkOut('searchYN', 'contentWrite_f');"
+											onclick="checkClick('searchYN', 'contentWrite_f');" />
+										<span style="cursor:default; float:left; margin-left:5px;"
+											onmouseover="checkOver('searchYN', 'contentWrite_f');"
+											onmouseout="checkOut('searchYN', 'contentWrite_f');"
+											onclick="checkClick('searchYN', 'contentWrite_f');">이 글이 검색이 되는것을 허용합니다.</span>
+										<div style="float:left; overflow:hidden; cursor:default;">
+											<img src="../cafe/images/error_icon.gif" alt="" style="float:left; margin-left:10px;" />
+											<span style="float:left; margin-left:5px; color:#ff7200;">검색을 통하여 게시물을 볼 수 있습니다.</span>
+										</div>
+									</li>
+								</ul>
+								<!-- //03. 검색설정 -->
+
+								<!-- 04. 기능설정 -->
+								<ul style="clear:both; list-style:none; height:30px;">
+									<li style="float:left; width:70px; font-weight:bold; padding-top:2px;">기능설정</li>
+									<li style="float:left;">
+										<input type="hidden" name="bCommentTF" value="0" />
+										덧글 <a href="javascript:void(0);" onclick="changeTF('Comment', 'contentWrite_f', this);" style="color:#777; text-decoration:underline;">허용안함</a>
+										&nbsp;&nbsp;<span style="color:#bbb;">|</span>&nbsp;&nbsp;
+
+										<input type="hidden" name="bScrapTF" value="0" />
+										스크랩 <a href="javascript:void(0);" onclick="changeTF('Scrap', 'contentWrite_f', this);" style="color:#777; text-decoration:underline;">허용안함</a>
+										&nbsp;&nbsp;<span style="color:#bbb;">|</span>&nbsp;&nbsp;
+
+										<input type="hidden" name="bAutoTF" value="0" />
+										자동출처 <a href="javascript:void(0);" onclick="changeTF('Auto', 'contentWrite_f', this);" style="color:#777; text-decoration:underline;">사용안함</a>
+									</li>
+								</ul>
+								<!-- //04. 기능설정 -->
+								<!-- //기타 옵션 -->
+
+								<div style="text-align:center; margin-top:10px;">
+									<img src="../cafe/images/btn/cafe_save_btn.gif" alt="임시저장" style="cursor:pointer;" />
+									<img src="../cafe/images/btn/cafe_show_btn.gif" alt="미리보기" style="cursor:pointer;" />
+
+									<img src="../cafe/images/btn/cafe_ok_btn.gif" alt="확인" style="cursor:pointer;" onclick="e.$g('contentWrite_f').submit();" />
+								</div>
+							</div>
+							<script type="text/javascript">
+								//<![CDATA[
+								// 에디터 생성
+								goodEditor.create('editor');
+								// 에디터 로딩
+								goodEditor.editor.loading();
+								//]]>
+							</script>
+						</div>
+						<!-- //에디터 레이아웃 영역 -->
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php
+}
+?>
+</body>
+</html>

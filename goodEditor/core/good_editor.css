@@ -1,0 +1,84 @@
+/**
+ * @ CopyRight (C) WSCSX.COM. All Rights Reserved.
+ * @author M_FireFox (k_re_3166@naver.com)
+ * @brief  goodEditor StyleSheet
+ **/
+
+/*All StyleSheet*/
+* { margin:0 auto; padding:0; }
+img { border:0; }
+a:link, a:visited, a:active { color:#333; text-decoration:none; }
+a:hover { color:#777; text-decoration:underline; }
+body { font-size:11px; font-family:'µ¸¿ò', verdana, arial; height:100%; }
+
+/*Layout Plugin class*/
+.layoutLink { float:left; overflow:hidden; width:56px; margin:4px; }
+.layoutLink a { text-align:center; display:block; text-decoration:none; }
+.layoutLink a:hover {  }
+.layoutLink table { border:1px solid #999; border-right:0; border-bottom:0; }
+.layoutLink td { border:1px solid #999; border-left:0; border-top:0; }
+
+/*Editor Class*/
+.divBody { border:0px solid #d5d5d5; }
+.divTitleTapArea { float:left; clear:both; overflow:hidden; position:relative; top:1px; z-index:15; width:100%; }
+.divTitleTap { float:left; border:1px solid #d5d5d5; width:70px; text-align:center; position:relative; margin-right:-1px; overflow:hidden; }
+.divTitleTap.on { top:0; height:29px; border-bottom:1px solid #fff; }
+.divTitleTap.off { top:5px; height:24px; padding-bottom:5px; }
+.divTitleObj { float:left; font-size:11px; font-family:'µ¸¿ò'; padding:4px 0 4px 0; }
+.divTitle { position:relative; z-index:10; background:#fff; height:34px; clear:both; border:1px solid #d5d5d5; border-bottom:0; padding-left:4px; }
+.divEditArea { clear:both; border:1px solid #d5d5d5; border-top:0; }
+.editSmallLogo { float:right; margin:10px 0 0 0; }
+.editorIframe { }
+
+/*Upload Layout Class*/
+.file_info { overflow:hidden; float:left; padding-bottom:10px; }
+.file_info_ul { display:none; list-style:none; margin:0; padding:0 2px; }
+.file_title { float:left; width:70px; font-weight:bold; padding-top:2px; }
+.file_content { }
+.fileinfo { overflow:hidden; margin-left:-2px; *float:left; *padding-right:2px; *border-right:1px solid #dfdfdf; }
+.fileinfo_body { clear:both; overflow:hidden; font-family:verdana; font-size:10px; }
+.file_KB_persent { float:right; width:80px; height:7px; font-size:1px; border:1px solid #ddd; margin-top:5px; }
+.KB_persent { float:left; height:100%; font-size:1px; background:#ff7200; }
+.file_KB_text { float:right; margin-top:3px; margin-right:10px; font-size:10px; font-family:verdana, arial; }
+.file_KB { font-weight:bold; }
+
+/*Board Write Form Class*/
+div.fileinfoBody_0 { clear:both; float:left; position:relative; z-index:1; background:#f8f8f8; border:1px solid #dfdfdf; *padding:0 0 3px 0; }
+div.fileinfoBody_1 { clear:both; float:left; position:relative; z-index:1; background:#f0f0f0; border:1px solid #dfdfdf; *padding:0 0 3px 0; }
+img.fileInfoIcon { float:left; margin:5px; }
+div.fileinfoText { float:left; line-height:block; margin-top:5px; font-size:10px; font-family:'verdana'; }
+div.fileinfoDelete { float:right; color:#bc5353; font-weight:bold; margin-top:4px; margin-right:5px; cursor:default; }
+div.fileinfoByte { float:right; font-family:'verdana'; font-size:10px; margin-top:4px; margin-right:5px; }
+div.file_information { line-height:16px; margin-top:-1px; padding:5px; background:#f8f8f8; border:1px solid #dfdfdf; }
+div.fileinfo_funcs { clear:both; position:absolute; z-index:2; border:2px solid #999; background:#fff; }
+
+/*toolTip Class*/
+.toolBody { position:absolute; overflow:hidden; width:250px; margin-top:50px; font-size:11px; font-family:'µ¸¿ò'; }
+.toolLeft { float:left; width:11px; height:70px; }
+.toolCenter { float:left; width:227px; height:50px; padding:10px 0 10px 0; }
+.toolRight { float:left; width:12px; height:70px; }
+.innColor { float:left; }
+.choColor { float:left; margin-top:5px; margin-left:5px; border:1px solid #bbb; }
+
+/*left or right a tag*/
+.lr a:link, .lr a:visited { text-decoration:none; font-size:11px; color:#000; float:left; }
+.lr a:hover { color:#000; }
+.lft { float:left; }
+
+/*plugin class*/
+.colorPlug { border:1px solid #ccc; background:#fff; }
+
+/*input textbox ½ºÅ²*/
+.input_skin1 { border-top:1px solid #a7a7a7; border-left:1px solid #a7a7a7; border-right:1px solid #c0c0c0; border-bottom:1px solid #c0c0c0; padding:2px; color:#555; width:460px; }
+
+/*textarea ½ºÅ²*/
+.textarea_skin1 { border-top:1px solid #a7a7a7; border-left:1px solid #a7a7a7; border-right:1px solid #c0c0c0; border-bottom:1px solid #c0c0c0; padding:5px; color:#555; line-height:18px; width:95%; }
+
+/*table ½ºÅ²*/
+.table_skin1 { border-top:2px solid #999; border-bottom:2px solid #999; margin:5px; }
+.table_skin1 caption { margin-bottom:5px; }
+.table_skin1 th { padding:5px; background:#eee; border-top:1px solid #fff; }
+.table_skin1 td { padding:5px; }
+
+/*StateView*/
+.state_view {line-height:18px; border:1px solid #999; border-top:0; background:#f5f5f5; padding:3px; color:#777; font-family:'µ¸¿ò', arial, verdana, sans-serif; font-size:11px;}

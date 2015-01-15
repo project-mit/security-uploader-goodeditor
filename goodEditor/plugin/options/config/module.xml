@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<plugin callback="layout" action="true">
+		<title>레이아웃</title>
+		<description>에디터의 기본 레이아웃을 설정합니다.</description>
+	</plugin>
+	<plugin callback="document" action="true">
+		<title>문서양식</title>
+		<description>문서의 기본 양식을 설정합니다.</description>
+	</plugin>
+</module>

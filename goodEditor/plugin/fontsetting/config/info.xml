@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+	<plugin selectTap="true">
+		<title>글꼴 설정</title>
+		<description>글꼴의 스타일을 적용할 수 있는 모듈 입니다.</description>
+		<version>0.1.1</version>
+		<date>2010-07-22</date>
+	</plugin>
+	<author>
+		<name>goodEditor</name>
+		<email>quddnr145@naver.com</email>
+		<link>http://www.pj-room.com/</link>
+	</author>
+</info>
